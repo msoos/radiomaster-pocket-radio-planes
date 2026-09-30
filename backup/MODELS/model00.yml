@@ -376,17 +376,16 @@ screens:
       lines:
         0:
           sources:
-            0:
-              val: tele(2)
             1:
-              val: tele(10)
+              val: tele(12)
         1:
           sources:
-            0:
-              val: tele(12)
             1:
-              val: TX_TIME
-        2: ~
+              val: tele(10)
+        2:
+          sources:
+            1:
+              val: tele(2)
         3: ~
 varioData:
   source: 11

@@ -16,10 +16,12 @@ Unless a model is listed as an exception below:
 | SD | Vario: down = on (`vrion`), up = off (`vrioff`) |
 
 - Low-battery warning: logical switch L1 fires when RxBt stays below the
-  threshold while armed (SA down), and plays `lowbat` every 10 s. The LS references the sensor by
-  its index in the model's sensor list (`tele(N)`), which differs between models.
+  threshold while armed (SA down), and plays `lowbat` every 10 s.
+- L1 and the telemetry screen reference sensors by their index in the model's
+  sensor list (`tele(N)`), which differs between models.
 - Motor cut: throttle channel forced to −100 while SA is up.
 - Timers: Timer 1 `thr` counts throttle-relative with minute beeps; Timer 2 `tot` runs while SA is down.
+- Telemetry screen: `thr` timer | RxBt, `tot` timer | altitude, and link quality (RQly); items a model lacks are left blank.
 
 ## Overview
 
@@ -44,6 +46,7 @@ Tailless DLG (discus launch glider) with elevons.
 - No throttle, no motor cut. SA still sends the arm channel and plays the callouts.
 - SE down is the launch (take-off) flight mode, with its own trims.
 - Startup warning expects SD up (vario off).
+- No active timers; the telemetry screen shows only RxBt, altitude and RQly.
 
 ### air75 (model01)
 Betaflight whoop. Everything is done in the flight controller; do not edit.
@@ -66,7 +69,7 @@ Cloned from Phoenix16; flies with a flight controller.
 
 ### Tanar (model04)
 - **Different channel order:** CH1 Ele, CH2 Rud, CH3 Motor, CH4 and CH6 ailerons (±35 % differential).
-- No vario sensor, no telemetry screen. RxBt is sensor 0.
+- No altitude/vario sensor, so the altitude spot on the telemetry screen is blank. RxBt is sensor 0.
 
 ### Super Ray (model05)
 Flying wing.

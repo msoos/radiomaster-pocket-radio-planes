@@ -371,9 +371,22 @@ screens:
     type: VALUES
     u:
       lines:
-        0: ~
-        1: ~
-        2: ~
+        0:
+          sources:
+            0:
+              val: Tmr1
+            1:
+              val: tele(0)
+        1:
+          sources:
+            0:
+              val: Tmr2
+            1:
+              val: tele(15)
+        2:
+          sources:
+            1:
+              val: tele(7)
         3: ~
 varioData:
   source: none

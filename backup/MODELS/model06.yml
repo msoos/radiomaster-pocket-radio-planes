@@ -594,6 +594,28 @@ potsWarnEnabled: 0
 jitterFilter: GLOBAL
 displayChecklist: 0
 telemetryProtocol: 0
+screens:
+  0:
+    type: VALUES
+    u:
+      lines:
+        0:
+          sources:
+            0:
+              val: Tmr1
+            1:
+              val: tele(0)
+        1:
+          sources:
+            0:
+              val: Tmr2
+            1:
+              val: tele(5)
+        2:
+          sources:
+            1:
+              val: tele(8)
+        3: ~
 varioData:
   source: 4
   centerSilent: 1
