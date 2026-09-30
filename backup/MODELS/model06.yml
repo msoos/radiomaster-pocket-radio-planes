@@ -563,6 +563,14 @@ customFn:
     swtch: SC2
     func: PLAY_TRACK
     def: "ratlow\x00\x00,1,1x"
+  10:
+    swtch: SD2
+    func: PLAY_TRACK
+    def: "vrion\x00\x00\x00,1,1x"
+  11:
+    swtch: SD0
+    func: PLAY_TRACK
+    def: "vrioff\x00\x00,1,1x"
 swashR:
   type: TYPE_NONE
   value: 0

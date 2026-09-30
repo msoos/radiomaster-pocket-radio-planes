@@ -390,7 +390,7 @@ expoData:
     scale: 0
     mode: 3
     chn: 1
-    swtch: SD1
+    swtch: SC1
     flightModes: 000000000
     weight: 70
     offset: 0
@@ -514,6 +514,14 @@ customFn:
     swtch: SB2
     func: PLAY_TRACK
     def: "flp2\x00\x00\x00\x00,1,1x"
+  6:
+    swtch: SD2
+    func: PLAY_TRACK
+    def: "vrion\x00\x00\x00,1,1x"
+  7:
+    swtch: SD0
+    func: PLAY_TRACK
+    def: "vrioff\x00\x00,1,1x"
 swashR:
   type: TYPE_NONE
   value: 0

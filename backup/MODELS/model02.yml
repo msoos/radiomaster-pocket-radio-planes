@@ -388,6 +388,14 @@ customFn:
     swtch: L1
     func: PLAY_TRACK
     def: "lowbat\x00\x00,1,10"
+  8:
+    swtch: SD2
+    func: PLAY_TRACK
+    def: "vrion\x00\x00\x00,1,1x"
+  9:
+    swtch: SD0
+    func: PLAY_TRACK
+    def: "vrioff\x00\x00,1,1x"
 swashR:
   type: TYPE_NONE
   value: 0
