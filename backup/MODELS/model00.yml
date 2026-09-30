@@ -295,46 +295,18 @@ expoData:
       value: 20
     trimSource: 0
     name: ""
-  - srcRaw: T4
-    scale: 0
-    mode: 3
-    chn: 3
-    swtch: NONE
-    flightModes: 000000000
-    weight: 100
-    offset: 0
-    curve:
-      type: 1
-      value: 0
-    trimSource: 0
-    name: ""
-  - srcRaw: SA
-    scale: 0
-    mode: 3
-    chn: 4
-    swtch: NONE
-    flightModes: 000000000
-    weight: 100
-    offset: 0
-    curve:
-      type: 1
-      value: 0
-    trimSource: 0
-    name: ""
 inputNames:
   0:
     val: Ele
   1:
     val: Ail
-  3:
-    val: h
 logicalSw:
   0:
     func: FUNC_VNEG
     def: tele(12),72
     delay: 40
     duration: 0
-    andsw: NONE
+    andsw: SA2
     lsPersist: 0
     lsState: 0
 customFn:
@@ -389,6 +361,8 @@ switchWarning:
     pos: up
   SC:
     pos: mid
+  SD:
+    pos: up
 thrTrimSw: 0
 potsWarnMode: WARN_OFF
 potsWarnEnabled: 0
@@ -423,7 +397,7 @@ varioData:
   max: 0
 rssiSource: none
 rfAlarms:
-  warning: 60
+  warning: 45
   critical: 42
 disableTelemetryWarning: 0
 moduleData:
@@ -773,10 +747,10 @@ hatsMode: GLOBAL
 usbJoystickExtMode: 0
 usbJoystickIfMode: JOYSTICK
 usbJoystickCircularCut: 0
-radioGFDisabled: ON
+radioGFDisabled: GLOBAL
 radioTrainerDisabled: OFF
 modelHeliDisabled: OFF
-modelFMDisabled: ON
+modelFMDisabled: GLOBAL
 modelCurvesDisabled: GLOBAL
 modelGVDisabled: GLOBAL
 modelLSDisabled: GLOBAL

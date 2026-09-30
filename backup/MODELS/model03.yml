@@ -445,7 +445,7 @@ jitterFilter: GLOBAL
 potsWarnPosition:
   0:
     val: 1
-displayChecklist: 1
+displayChecklist: 0
 telemetryProtocol: 0
 screens:
   0:

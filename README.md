@@ -1,0 +1,96 @@
+# RadioMaster Pocket model backup
+
+EdgeTX 2.12.2 backup of a RadioMaster Pocket with an internal ELRS (CRSF) module.
+`backup/` is the unpacked `backup.etx`; edit the YAML there, then run
+`./make_etx.sh` to rebuild the `.etx` for restoring on the radio.
+
+## Common conventions
+
+Unless a model is listed as an exception below:
+
+| Switch | Function |
+|---|---|
+| SA | Arm (CH5, ELRS arming channel). Up = disarmed, down = armed; callouts `disarm` / `armed` |
+| SB | Flaps / flight modes (up, 1, 2), callouts `flapup` / `flp1` / `flp2` |
+| SC | Rates: up = high, mid = medium, down = low (`rathi` / `ratmed` / `ratlow`). Startup warning expects mid |
+| SD | Vario: down = on (`vrion`), up = off (`vrioff`) |
+
+- Low-battery warning: logical switch L1 fires when RxBt stays below the
+  threshold while armed (SA down), and plays `lowbat` every 10 s. The LS references the sensor by
+  its index in the model's sensor list (`tele(N)`), which differs between models.
+- Motor cut: throttle channel forced to −100 while SA is up.
+- Timers: Timer 1 `thr` counts throttle-relative with minute beeps; Timer 2 `tot` runs while SA is down.
+
+## Overview
+
+| # | Model | Type | Battery / low-bat | Motor cut | Vario (SD) | Flaps (SB) |
+|---|---|---|---|---|---|---|
+| 00 | Alula | Tailless DLG, no motor | 2S, < 7.2 V for 4 s | – | yes | – |
+| 01 | air75 | Betaflight quad (**hands off**) | – | via Betaflight | – | – |
+| 02 | Phoenix16 | Motor glider | 3S, < 11.1 V for 0.8 s | CH3 | yes | – |
+| 03 | Bixler | Plane with flight controller | – | CH3 | – | – |
+| 04 | Tanar | Plane | 3S, < 11.1 V for 0.8 s | CH3 | – | – |
+| 05 | Super Ray | Flying wing | 3S, < 11.1 V for 0.8 s | CH3 | – | – |
+| 06 | ASW28 | Scale glider with motor, flaps | – | CH3 | yes | yes |
+| 07 | F5J new | F5J glider, 6 wing servos | 3S, < 11.1 V for 0.8 s | CH10 | yes | yes |
+| 08 | F5J old | F5J glider, flaps only (RES) | 3S, < 11.1 V for 0.8 s | CH10 | yes | yes |
+| 09 | U-Glider | Motor glider, flaperons | 2S, < 7.2 V for 4 s | CH3 | yes | yes |
+
+## Models
+
+### Alula (model00)
+Tailless DLG (discus launch glider) with elevons.
+- CH1/CH2 are the elevons: CH3/CH4 (aileron with ±20 % differential) plus ±65 % elevator.
+- No throttle, no motor cut. SA still sends the arm channel and plays the callouts.
+- SE down is the launch (take-off) flight mode, with its own trims.
+- Startup warning expects SD up (vario off).
+
+### air75 (model01)
+Betaflight whoop. Everything is done in the flight controller; do not edit.
+- CH1–4 AETR, CH5 SA arm, CH6 SB mode, CH7 SE flip-over-after-crash, CH8 SD beeper.
+- CH3 throttle is limited to 60 %.
+- All switches must be up at startup.
+
+### Phoenix16 (model02)
+Motor glider, conventional tail.
+- CH1 Ail, CH2 Ele, CH3 Motor, CH4 Rud.
+- Flight modes 1 and 2 exist but have no switch.
+- Pot warnings on. Startup warning expects SD down (vario on).
+
+### Bixler (model03)
+Cloned from Phoenix16; flies with a flight controller.
+- CH1 Ail, CH2 Ele, CH3 Motor, CH4 Rud, CH5 flight-controller mode from SB, CH6 pot P1.
+- **Arming is different:** ELRS switch arming on SA down, not a CH5 mix, because CH5 carries the mode.
+- SB: up = manual (`manmod`, also forces CH6 to −100), mid = acro, down = stabilized (`stbmod`).
+- Startup warning expects SB down (stabilized).
+
+### Tanar (model04)
+- **Different channel order:** CH1 Ele, CH2 Rud, CH3 Motor, CH4 and CH6 ailerons (±35 % differential).
+- No vario sensor, no telemetry screen. RxBt is sensor 0.
+
+### Super Ray (model05)
+Flying wing.
+- CH1/CH2 elevons (50 % aileron + 50 % elevator), CH3 throttle. No rudder.
+- Has Alt/VSpd sensors but no vario configured. RxBt is sensor 0.
+
+### ASW28 (model06)
+Scale glider with motor and flaps.
+- CH1/CH7 ailerons (±40 % differential, camber from flaps via curve), CH2 Ele (with throttle and flap compensation), CH3 Thr, CH4 Rud (20 %), CH6 flaps (curve).
+- Flight modes `flap1`/`flap2` on SB mid/down, each with its own elevator trim.
+
+### F5J new (model07)
+Six-servo F5J competition glider.
+- CH1 Rud, CH2 Ele, CH3/CH4 ailerons, CH6/CH7 mid ailerons, CH8/CH9 flaps, **CH10 throttle**.
+- Elevator gets throttle and flap compensation.
+- Flight modes `flap1`/`flap2` on SB mid/down.
+
+### F5J old (model08)
+Earlier two-servo version of the F5J setup.
+- Rudder-elevator-flaps, no ailerons: CH1 Rud, CH2 Ele, CH3/CH4 flaps, **CH10 throttle**.
+- Same flight modes and callouts as F5J new.
+
+### U-Glider (model09)
+Motor glider with flaperons.
+- CH1/CH6 flaperons (aileron + 40 % flap), CH2 Ele (with throttle and flap compensation), CH3 Motor, CH4 Rud.
+- Flaps on SB (up / mid / down) with callouts.
+- Flight modes `flap1`/`flap2` on SB mid/down.

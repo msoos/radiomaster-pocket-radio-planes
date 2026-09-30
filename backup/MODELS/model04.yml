@@ -347,7 +347,7 @@ logicalSw:
     def: tele(0),111
     delay: 8
     duration: 0
-    andsw: NONE
+    andsw: SA2
     lsPersist: 0
     lsState: 0
 customFn:

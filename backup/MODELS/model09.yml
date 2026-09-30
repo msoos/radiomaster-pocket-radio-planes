@@ -71,7 +71,7 @@ flightModeData:
       2:
         value: 0
         mode: 31
-    swtch: NONE
+    swtch: SB1
     name: flap1
     fadeIn: 0
     fadeOut: 0
@@ -83,7 +83,7 @@ flightModeData:
       2:
         value: 0
         mode: 31
-    swtch: SA2
+    swtch: SB2
     name: flap2
     fadeIn: 0
     fadeOut: 0
@@ -494,10 +494,14 @@ logicalSw:
     def: tele(12),72
     delay: 40
     duration: 0
-    andsw: NONE
+    andsw: SA2
     lsPersist: 0
     lsState: 0
 customFn:
+  0:
+    swtch: SA0
+    func: OVERRIDE_CHANNEL
+    def: 2,-100,1
   1:
     swtch: SD2
     func: VARIO
@@ -506,6 +510,10 @@ customFn:
     swtch: L1
     func: PLAY_TRACK
     def: "lowbat\x00\x00,1,10"
+  3:
+    swtch: SB1
+    func: PLAY_TRACK
+    def: "flp1\x00\x00\x00\x00,1,1x"
   4:
     swtch: SB0
     func: PLAY_TRACK
@@ -522,6 +530,14 @@ customFn:
     swtch: SD0
     func: PLAY_TRACK
     def: "vrioff\x00\x00,1,1x"
+  8:
+    swtch: SA0
+    func: PLAY_TRACK
+    def: "disarm\x00\x00,1,1x"
+  9:
+    swtch: SA2
+    func: PLAY_TRACK
+    def: "armed\x00\x00\x00,1,1x"
 swashR:
   type: TYPE_NONE
   value: 0

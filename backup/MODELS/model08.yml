@@ -44,7 +44,7 @@ beepANACenter: 0
 extendedLimits: 0
 extendedTrims: 0
 throttleReversed: 0
-checklistInteractive: 1
+checklistInteractive: 0
 flightModeData:
   0:
     trim:
@@ -628,7 +628,7 @@ logicalSw:
     def: tele(12),111
     delay: 8
     duration: 0
-    andsw: NONE
+    andsw: SA2
     lsPersist: 0
     lsState: 0
 customFn:
@@ -710,7 +710,7 @@ potsWarnPosition:
     val: 63
   7:
     val: 63
-displayChecklist: 1
+displayChecklist: 0
 telemetryProtocol: 0
 varioData:
   source: 1
