@@ -204,7 +204,7 @@ limitData:
     min: 0
     max: 0
     revert: 1
-    offset: -77
+    offset: 0
     ppmCenter: 0
     symetrical: 0
     name: AilL
@@ -222,7 +222,7 @@ limitData:
     min: 0
     max: 0
     revert: 1
-    offset: -146
+    offset: 0
     ppmCenter: 0
     symetrical: 0
     name: AilR

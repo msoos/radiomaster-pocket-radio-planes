@@ -292,7 +292,7 @@ limitData:
     min: 0
     max: 0
     revert: 1
-    offset: 167
+    offset: 0
     ppmCenter: 0
     symetrical: 0
     name: Ele
