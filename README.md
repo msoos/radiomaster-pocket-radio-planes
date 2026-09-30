@@ -49,7 +49,7 @@ Tailless DLG (discus launch glider) with elevons.
 - CH1/CH2 are the elevons: CH3/CH4 (aileron with ±20 % differential) plus ±65 % elevator.
 - No throttle, no motor cut. SA still sends the arm channel and plays the callouts.
 - SE down is the launch (take-off) flight mode, with its own trims.
-- Startup warning expects SD up (vario off).
+- Startup warning expects SD down (vario on).
 - No active timers; the telemetry screen shows only RxBt, altitude and RQly.
 
 ### air75 (model01)

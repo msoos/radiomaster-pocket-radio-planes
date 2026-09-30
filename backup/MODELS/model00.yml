@@ -389,7 +389,7 @@ switchWarning:
   SC:
     pos: mid
   SD:
-    pos: up
+    pos: down
 thrTrimSw: 0
 potsWarnMode: WARN_OFF
 potsWarnEnabled: 0
