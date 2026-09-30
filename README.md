@@ -64,7 +64,7 @@ Betaflight whoop. Everything is done in the flight controller; do not edit.
 Motor glider, conventional tail.
 - CH1 Ail, CH2 Ele, CH3 Motor, CH4 Rud.
 - Flight modes 1 and 2 exist but have no switch.
-- Pot warnings on. Startup warning expects SD down (vario on).
+- Startup warning expects SD down (vario on).
 
 ### Bixler (model03)
 Cloned from Phoenix16; flies with a flight controller.

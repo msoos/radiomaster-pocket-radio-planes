@@ -423,12 +423,9 @@ switchWarning:
   SD:
     pos: down
 thrTrimSw: 0
-potsWarnMode: WARN_MANUAL
-potsWarnEnabled: 1
+potsWarnMode: WARN_OFF
+potsWarnEnabled: 0
 jitterFilter: GLOBAL
-potsWarnPosition:
-  0:
-    val: 1
 displayChecklist: 0
 telemetryProtocol: 0
 screens:
