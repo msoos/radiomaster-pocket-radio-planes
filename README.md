@@ -2,7 +2,9 @@
 
 EdgeTX 2.12.2 backup of a RadioMaster Pocket with an internal ELRS (CRSF) module.
 `backup/` is the unpacked `backup.etx`; edit the YAML there, then run
-`./make_etx.sh` to rebuild the `.etx` for restoring on the radio.
+`./make_etx.sh` to rebuild the `.etx` for restoring on the radio. It runs
+`./fix_checksum.py` first, because EdgeTX rejects a `radio.yml` whose checksum line
+doesn't match its contents.
 
 ## Common conventions
 
@@ -25,6 +27,7 @@ Unless a model is listed as an exception below:
 - L1 and the telemetry screen reference sensors by their index in the model's
   sensor list (`tele(N)`), which differs between models.
 - Motor cut: throttle channel forced to −100 while SA is up.
+- SD-card logging: a global function logs telemetry every 1 s while SA is down, so each armed period gets its own log.
 - Timers: Timer 1 `thr` counts throttle-relative with minute beeps; Timer 2 `tot` runs while SA is down.
 - Telemetry screen: `thr` timer | RxBt, `tot` timer | altitude, and link quality (RQly); items a model lacks are left blank.
 
