@@ -76,7 +76,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ele
+    name: Ele
   - destCh: 1
     srcRaw: I3
     weight: 100
@@ -114,7 +114,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Motor
+    name: Thr
   - destCh: 3
     srcRaw: I0
     weight: 100
@@ -152,7 +152,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: arm
+    name: Arm
   - destCh: 5
     srcRaw: I0
     weight: 100
@@ -180,7 +180,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: Ele
     curve: 0
   1:
     min: 0
@@ -189,7 +189,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: Rud
     curve: 0
   2:
     min: 0
@@ -198,7 +198,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: Thr
     curve: 0
   3:
     min: 0
@@ -207,7 +207,7 @@ limitData:
     offset: -77
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: AilL
     curve: 0
   4:
     min: 0
@@ -216,7 +216,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: Arm
     curve: 0
   5:
     min: 0
@@ -225,7 +225,7 @@ limitData:
     offset: -146
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: AilR
     curve: 0
 expoData:
   - srcRaw: Ail
@@ -340,7 +340,7 @@ inputNames:
   2:
     val: Thr
   3:
-    val: " Ru"
+    val: Rud
 logicalSw:
   0:
     func: FUNC_VNEG

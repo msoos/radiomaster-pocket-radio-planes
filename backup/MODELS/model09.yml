@@ -125,7 +125,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: Flap
   - destCh: 1
     srcRaw: I1
     weight: 100
@@ -144,7 +144,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Elev
+    name: Ele
   - destCh: 1
     srcRaw: I2
     weight: 16
@@ -163,7 +163,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 12
-    name: Elev
+    name: ThrCmp
   - destCh: 1
     srcRaw: I4
     weight: 14
@@ -182,7 +182,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: FlpCmp
   - destCh: 2
     srcRaw: I2
     weight: 100
@@ -201,7 +201,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Motor
+    name: Thr
   - destCh: 3
     srcRaw: I3
     weight: 100
@@ -220,7 +220,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Rudder
+    name: Rud
   - destCh: 4
     srcRaw: SA
     weight: 100
@@ -239,7 +239,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: arm
+    name: Arm
   - destCh: 5
     srcRaw: I0
     weight: -100
@@ -258,7 +258,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ail2
+    name: Ail
   - destCh: 5
     srcRaw: I4
     weight: -40
@@ -277,7 +277,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: Flap
 limitData:
   0:
     min: 0
@@ -286,7 +286,7 @@ limitData:
     offset: 0
     ppmCenter: -39
     symetrical: 0
-    name: ailL
+    name: AilL
     curve: 0
   1:
     min: 0
@@ -295,7 +295,7 @@ limitData:
     offset: 167
     ppmCenter: 0
     symetrical: 0
-    name: ele
+    name: Ele
     curve: 0
   2:
     min: 0
@@ -304,7 +304,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: thr
+    name: Thr
     curve: 0
   3:
     min: 0
@@ -313,7 +313,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: rud
+    name: Rud
     curve: 0
   4:
     min: 0
@@ -322,7 +322,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: arm
+    name: Arm
     curve: 0
   5:
     min: 0
@@ -331,7 +331,7 @@ limitData:
     offset: 0
     ppmCenter: -17
     symetrical: 0
-    name: ailR
+    name: AilR
     curve: 0
 expoData:
   - srcRaw: Ail

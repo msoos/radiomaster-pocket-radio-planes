@@ -128,7 +128,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Elev
+    name: Ele
   - destCh: 2
     srcRaw: I2
     weight: 100
@@ -147,7 +147,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Motor
+    name: Thr
   - destCh: 3
     srcRaw: I3
     weight: 100
@@ -166,7 +166,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Rudder
+    name: Rud
   - destCh: 4
     srcRaw: SA
     weight: 100
@@ -185,7 +185,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: Arm
 limitData:
   0:
     min: 0
@@ -194,7 +194,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: Ail
     curve: 0
   1:
     min: 0
@@ -203,7 +203,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: Ele
     curve: 0
   2:
     min: 0
@@ -212,7 +212,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: Thr
     curve: 0
   3:
     min: 0
@@ -221,7 +221,16 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: Rud
+    curve: 0
+  4:
+    min: 0
+    max: 0
+    revert: 0
+    offset: 0
+    ppmCenter: 0
+    symetrical: 0
+    name: Arm
     curve: 0
   5:
     min: 0

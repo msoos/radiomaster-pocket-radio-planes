@@ -136,7 +136,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: arm
+    name: Arm
   - destCh: 5
     srcRaw: SB
     weight: 100
@@ -155,7 +155,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: mode
+    name: Mode
   - destCh: 6
     srcRaw: SE
     weight: 100
@@ -174,7 +174,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: flip
+    name: Flip
   - destCh: 7
     srcRaw: SD
     weight: 100
@@ -193,7 +193,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: beep
+    name: Beep
 limitData:
   2:
     min: 0

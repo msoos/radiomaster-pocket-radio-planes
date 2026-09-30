@@ -140,7 +140,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Elev
+    name: Ele
   - destCh: 1
     srcRaw: I2
     weight: 7
@@ -159,7 +159,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 7
-    name: ""
+    name: ThrCmp
   - destCh: 1
     srcRaw: I3
     weight: 12
@@ -178,7 +178,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: FlpCmp
   - destCh: 2
     srcRaw: I3
     weight: 100
@@ -197,7 +197,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Rflap
+    name: Flap
   - destCh: 3
     srcRaw: I3
     weight: 100
@@ -216,7 +216,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Lflap
+    name: Flap
   - destCh: 4
     srcRaw: SA
     weight: 100
@@ -235,7 +235,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: arm
+    name: Arm
   - destCh: 9
     srcRaw: I2
     weight: 100
@@ -254,7 +254,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: Thr
 limitData:
   0:
     min: 0
@@ -281,7 +281,7 @@ limitData:
     offset: 0
     ppmCenter: 67
     symetrical: 0
-    name: Rflap
+    name: FlapR
     curve: 0
   3:
     min: 999
@@ -290,7 +290,7 @@ limitData:
     offset: 0
     ppmCenter: -47
     symetrical: 0
-    name: Lflap
+    name: FlapL
     curve: 0
   4:
     min: 0
@@ -621,7 +621,7 @@ inputNames:
   2:
     val: Thr
   3:
-    val: fla
+    val: Fla
 logicalSw:
   0:
     func: FUNC_VNEG

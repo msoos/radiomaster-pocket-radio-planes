@@ -128,7 +128,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Elev
+    name: Ele
   - destCh: 2
     srcRaw: I2
     weight: 100
@@ -147,7 +147,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Motor
+    name: Thr
   - destCh: 3
     srcRaw: I3
     weight: 100
@@ -166,7 +166,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Rudder
+    name: Rud
   - destCh: 4
     srcRaw: I4
     weight: 200
@@ -185,7 +185,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 100
-    name: ""
+    name: Mode
   - destCh: 5
     srcRaw: P1
     weight: 100
@@ -204,7 +204,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: StbTrm
 limitData:
   0:
     min: 0
@@ -213,7 +213,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: Ail
     curve: 0
   1:
     min: 0
@@ -222,7 +222,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: Ele
     curve: 0
   2:
     min: 0
@@ -231,7 +231,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: Thr
     curve: 0
   3:
     min: 0
@@ -240,7 +240,16 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: Rud
+    curve: 0
+  4:
+    min: 0
+    max: 0
+    revert: 0
+    offset: 0
+    ppmCenter: 0
+    symetrical: 0
+    name: Mode
     curve: 0
   5:
     min: 0
@@ -249,7 +258,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: ""
+    name: StbTrm
     curve: 0
 expoData:
   - srcRaw: Ail
@@ -379,7 +388,7 @@ inputNames:
   3:
     val: Rud
   4:
-    val: mod
+    val: Mod
 customFn:
   0:
     swtch: SB0

@@ -143,7 +143,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Elev
+    name: Ele
   - destCh: 1
     srcRaw: I2
     weight: 7
@@ -162,7 +162,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 7
-    name: ""
+    name: ThrCmp
   - destCh: 1
     srcRaw: I3
     weight: 12
@@ -181,7 +181,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: FlpCmp
   - destCh: 2
     srcRaw: I5
     weight: 100
@@ -200,7 +200,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Rail
+    name: Ail
   - destCh: 3
     srcRaw: I5
     weight: 100
@@ -219,7 +219,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Lail
+    name: Ail
   - destCh: 4
     srcRaw: SA
     weight: 100
@@ -238,7 +238,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: arm
+    name: Arm
   - destCh: 5
     srcRaw: I5
     weight: 40
@@ -257,7 +257,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Lmail
+    name: Ail
   - destCh: 5
     srcRaw: I3
     weight: 20
@@ -276,7 +276,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: Flap
   - destCh: 6
     srcRaw: I5
     weight: 40
@@ -295,7 +295,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Rmail
+    name: Ail
   - destCh: 6
     srcRaw: I3
     weight: -20
@@ -314,7 +314,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: Flap
   - destCh: 7
     srcRaw: I3
     weight: 100
@@ -333,7 +333,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: -100
-    name: Lflap
+    name: Flap
   - destCh: 8
     srcRaw: I3
     weight: 100
@@ -352,7 +352,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: -100
-    name: Rflap
+    name: Flap
   - destCh: 9
     srcRaw: I2
     weight: 100
@@ -371,7 +371,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: Thr
 limitData:
   0:
     min: 0
@@ -398,7 +398,7 @@ limitData:
     offset: 0
     ppmCenter: -23
     symetrical: 0
-    name: Rail
+    name: AilR
     curve: 0
   3:
     min: 350
@@ -407,7 +407,7 @@ limitData:
     offset: 0
     ppmCenter: 60
     symetrical: 0
-    name: Lail
+    name: AilL
     curve: 0
   4:
     min: 0
@@ -425,7 +425,7 @@ limitData:
     offset: 0
     ppmCenter: 16
     symetrical: 0
-    name: Lmail
+    name: MAilL
     curve: 0
   6:
     min: 0
@@ -434,7 +434,7 @@ limitData:
     offset: 0
     ppmCenter: -33
     symetrical: 0
-    name: Rmail
+    name: MAilR
     curve: 0
   7:
     min: 458
@@ -443,7 +443,7 @@ limitData:
     offset: 0
     ppmCenter: -116
     symetrical: 0
-    name: Lflap
+    name: FlapL
     curve: 0
   8:
     min: 596
@@ -452,7 +452,7 @@ limitData:
     offset: 0
     ppmCenter: -97
     symetrical: 0
-    name: Rflap
+    name: FlapR
     curve: 0
   9:
     min: 0

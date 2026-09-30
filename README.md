@@ -17,6 +17,10 @@ Unless a model is listed as an exception below:
 
 - Low-battery warning: logical switch L1 fires when RxBt stays below the
   threshold while armed (SA down), and plays `lowbat` every 10 s.
+- Names: inputs `Ail` `Ele` `Thr` `Rud` `Fla`; mix lines say what they add
+  (`Ail`, `Flap`, `ThrCmp`, `FlpCmp`, ...); outputs name the servo (`AilL`/`AilR`,
+  `ElvL`/`ElvR`, `MAilL`/`MAilR`, `FlapL`/`FlapR`, `Arm`, ...). Left/right is a guess
+  where the model didn't say (Alula, Tanar, ASW28).
 - L1 and the telemetry screen reference sensors by their index in the model's
   sensor list (`tele(N)`), which differs between models.
 - Motor cut: throttle channel forced to −100 while SA is up.

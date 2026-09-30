@@ -73,7 +73,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: AilR
+    name: Ail
   - destCh: 0
     srcRaw: I1
     weight: 50
@@ -92,7 +92,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: Ele
   - destCh: 1
     srcRaw: I0
     weight: 50
@@ -111,7 +111,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: AilL
+    name: Ail
   - destCh: 1
     srcRaw: I1
     weight: 50
@@ -130,7 +130,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: ""
+    name: Ele
   - destCh: 2
     srcRaw: I2
     weight: 100
@@ -149,7 +149,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: thr
+    name: Thr
   - destCh: 4
     srcRaw: SA
     weight: 100
@@ -168,7 +168,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: arm
+    name: Arm
 limitData:
   0:
     min: 0
@@ -177,7 +177,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: Rail
+    name: ElvR
     curve: 0
   1:
     min: 0
@@ -186,7 +186,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: Lail
+    name: ElvL
     curve: 0
   2:
     min: 0
@@ -195,7 +195,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: thr
+    name: Thr
     curve: 0
   4:
     min: 0
@@ -204,7 +204,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: arm
+    name: Arm
     curve: 0
 expoData:
   - srcRaw: Ail
