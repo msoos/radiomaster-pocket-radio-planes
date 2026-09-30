@@ -100,7 +100,6 @@ Earlier two-servo version of the F5J setup.
 - Same fuselage (and receiver) as F5J new, different wing, so both use ELRS receiver number 2.
 - Rudder-elevator-flaps, no ailerons: CH1 Rud, CH2 Ele, CH3/CH4 flaps, **CH10 throttle**.
 - Same flight modes and callouts as F5J new.
-- The flap input runs the other way (`SB w-50 off73`), so `FlpCmp` moves the elevator the opposite way from F5J new when the flaps go down. This is deliberate.
 
 ### U-Glider (model09)
 Motor glider with flaperons.
