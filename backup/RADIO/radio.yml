@@ -1,0 +1,178 @@
+checksum:  13799
+semver: 2.12.2
+board: pocket
+calib:
+  LH:
+    mid: 1008
+    spanNeg: 715
+    spanPos: 782
+  LV:
+    mid: 1115
+    spanNeg: 626
+    spanPos: 626
+  RV:
+    mid: 952
+    spanNeg: 703
+    spanPos: 801
+  RH:
+    mid: 1059
+    spanNeg: 739
+    spanPos: 714
+  P1:
+    mid: 1024
+    spanNeg: 1008
+    spanPos: 1008
+currModelFilename: model8.yml
+vBatWarn: 65
+txVoltageCalibration: -21
+vBatMin: 72
+vBatMax: 84
+backlightColor: 0
+contrast: 14
+currModel: 7
+backlightMode: backlight_mode_all
+trainer:
+  calib:
+    0:
+      val: -2
+    1:
+      val: 0
+    2:
+      val: -51
+    3:
+      val: 0
+  mix:
+    0:
+      srcChn: 3
+      mode: REPL
+      studWeight: 100
+    1:
+      srcChn: 1
+      mode: REPL
+      studWeight: 100
+    2:
+      srcChn: 2
+      mode: REPL
+      studWeight: 100
+    3:
+      srcChn: 0
+      mode: REPL
+      studWeight: 100
+PPM_Multiplier: 0
+view: 0
+fai: 0
+disableMemoryWarning: 0
+beepMode: mode_all
+alarmsFlash: 1
+disableAlarmWarning: 0
+disableRssiPoweroffAlarm: 0
+disableTrainerPoweroffAlarm: 0
+USBMode: 0
+hatsMode: SWITCHABLE
+stickDeadZone: 0
+jackMode: 0
+hapticMode: mode_alarms
+stickMode: 1
+timezone: 0
+timezoneMinutes: 0
+adjustRTC: 0
+inactivityTimer: 250
+internalModuleBaudrate: 4
+internalModule: TYPE_CROSSFIRE
+splashMode: 1
+lightAutoOff: 2
+templateSetup: 11
+hapticLength: 2
+speakerPitch: 0
+hapticStrength: 3
+beepLength: 2
+gpsFormat: 0
+speakerVolume: 9
+backlightBright: 85
+blOffBright: 0
+switchesDelay: 0
+globalTimer: 1204760
+bluetoothName: taranis
+bluetoothBaudrate: 0
+bluetoothMode: OFF
+countryCode: 2
+noJitterFilter: 0
+disableRtcWarning: 0
+audioMuteEnable: 0
+keysBacklight: 0
+rotEncMode: 0
+imperial: 0
+ppmunit: 0
+ttsLanguage: en
+uiLanguage: en
+beepVolume: 2
+wavVolume: 4
+varioVolume: 1
+varioPitch: -100
+varioRange: 390
+varioRepeat: 0
+backgroundVolume: 4
+dontPlayHello: 0
+modelQuickSelect: 0
+invertLCD: 0
+serialPort:
+  AUX1:
+    mode: SBUS_TRAINER
+    power: 0
+  VCP:
+    mode: CLI
+    power: 0
+antennaMode: MODE_PER_MODEL
+pwrOnSpeed: 0
+pwrOffSpeed: 0
+pwrOffIfInactive: 0
+disablePwrOnOffHaptic: 0
+sticksConfig:
+  0:
+    name: ""
+    inv: 0
+  1:
+    name: ""
+    inv: 0
+  2:
+    name: ""
+    inv: 0
+  3:
+    name: ""
+    inv: 0
+potsConfig:
+  P1:
+    name: ""
+    inv: 0
+    type: without_detent
+switchConfig:
+  SA:
+    type: 3POS
+    name: ""
+  SB:
+    type: 3POS
+    name: ""
+  SC:
+    type: 3POS
+    name: ""
+  SD:
+    type: 3POS
+    name: ""
+  SE:
+    type: 3POS
+    name: ""
+ownerRegistrationID: " 38CTVP-"
+imuMax: 0
+imuOffset: 0
+uartSampleMode: 0
+radioGFDisabled: 0
+radioTrainerDisabled: 0
+modelHeliDisabled: 1
+modelFMDisabled: 0
+modelCurvesDisabled: 0
+modelGVDisabled: 0
+modelLSDisabled: 0
+modelSFDisabled: 0
+modelCustomScriptsDisabled: 1
+modelTelemetryDisabled: 0
+oneLogPerDay: 0
