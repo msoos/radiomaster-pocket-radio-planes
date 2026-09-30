@@ -328,6 +328,15 @@ inputNames:
     val: Ail
   3:
     val: h
+logicalSw:
+  0:
+    func: FUNC_VNEG
+    def: tele(12),72
+    delay: 40
+    duration: 0
+    andsw: NONE
+    lsPersist: 0
+    lsState: 0
 customFn:
   0:
     swtch: SC0
@@ -353,6 +362,10 @@ customFn:
     swtch: SB2
     func: VARIO
     def: 1
+  6:
+    swtch: L1
+    func: PLAY_TRACK
+    def: "lowbat\x00\x00,1,10"
 swashR:
   type: TYPE_NONE
   value: 0

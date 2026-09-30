@@ -464,7 +464,7 @@ expoData:
       value: 15
     trimSource: 0
     name: ""
-  - srcRaw: SA
+  - srcRaw: SB
     scale: 0
     mode: 3
     chn: 4
@@ -499,7 +499,7 @@ logicalSw:
     lsState: 0
 customFn:
   1:
-    swtch: SD0
+    swtch: SD2
     func: VARIO
     def: 1
   2:
@@ -507,11 +507,11 @@ customFn:
     func: PLAY_TRACK
     def: "lowbat\x00\x00,1,10"
   4:
-    swtch: SA0
+    swtch: SB0
     func: PLAY_TRACK
     def: "flapup\x00\x00,1,1x"
   5:
-    swtch: SA2
+    swtch: SB2
     func: PLAY_TRACK
     def: "flp2\x00\x00\x00\x00,1,1x"
 swashR:

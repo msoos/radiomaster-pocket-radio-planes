@@ -305,6 +305,15 @@ inputNames:
     val: Ele
   2:
     val: Thr
+logicalSw:
+  0:
+    func: FUNC_VNEG
+    def: tele(0),111
+    delay: 8
+    duration: 0
+    andsw: NONE
+    lsPersist: 0
+    lsState: 0
 customFn:
   0:
     swtch: SA0
@@ -330,6 +339,10 @@ customFn:
     swtch: SC2
     func: PLAY_TRACK
     def: "ratlow\x00\x00,1,1x"
+  6:
+    swtch: L1
+    func: PLAY_TRACK
+    def: "lowbat\x00\x00,1,10"
 swashR:
   type: TYPE_NONE
   value: 0

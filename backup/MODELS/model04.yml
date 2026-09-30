@@ -341,6 +341,15 @@ inputNames:
     val: Thr
   3:
     val: " Ru"
+logicalSw:
+  0:
+    func: FUNC_VNEG
+    def: tele(0),111
+    delay: 8
+    duration: 0
+    andsw: NONE
+    lsPersist: 0
+    lsState: 0
 customFn:
   0:
     swtch: SA0
@@ -349,23 +358,27 @@ customFn:
   1:
     swtch: SC0
     func: PLAY_TRACK
-    def: "rathi\x00\x00\x00,1,!1x"
+    def: "rathi\x00\x00\x00,1,1x"
   2:
     swtch: SC1
     func: PLAY_TRACK
-    def: "ratmed\x00\x00,1,!1x"
+    def: "ratmed\x00\x00,1,1x"
   3:
     swtch: SC2
     func: PLAY_TRACK
-    def: "ratlow\x00\x00,1,!1x"
+    def: "ratlow\x00\x00,1,1x"
   4:
     swtch: SA0
     func: PLAY_TRACK
-    def: "disarm\x00\x00,1,!1x"
+    def: "disarm\x00\x00,1,1x"
   5:
     swtch: SA2
     func: PLAY_TRACK
-    def: "arm\x00\x00\x00\x00\x00,1,!1x"
+    def: "armed\x00\x00\x00,1,1x"
+  6:
+    swtch: L1
+    func: PLAY_TRACK
+    def: "lowbat\x00\x00,1,10"
 swashR:
   type: TYPE_NONE
   value: 0

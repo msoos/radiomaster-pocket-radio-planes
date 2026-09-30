@@ -632,6 +632,10 @@ logicalSw:
     lsPersist: 0
     lsState: 0
 customFn:
+  0:
+    swtch: SA0
+    func: OVERRIDE_CHANNEL
+    def: 9,-100,1
   1:
     swtch: SD2
     func: VARIO
@@ -649,15 +653,15 @@ customFn:
     func: PLAY_TRACK
     def: "vrion\x00\x00\x00,1,1x"
   6:
-    swtch: SA0
+    swtch: SB0
     func: PLAY_TRACK
     def: "flapup\x00\x00,1,1x"
   7:
-    swtch: SA1
+    swtch: SB1
     func: PLAY_TRACK
     def: "flp1\x00\x00\x00\x00,1,1x"
   8:
-    swtch: SA2
+    swtch: SB2
     func: PLAY_TRACK
     def: "flp2\x00\x00\x00\x00,1,1x"
   9:

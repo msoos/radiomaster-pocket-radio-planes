@@ -826,6 +826,10 @@ logicalSw:
     lsPersist: 0
     lsState: 0
 customFn:
+  0:
+    swtch: SA0
+    func: OVERRIDE_CHANNEL
+    def: 9,-100,1
   2:
     swtch: L1
     func: PLAY_TRACK
