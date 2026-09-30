@@ -204,7 +204,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: StbTrm
+    name: Gain
 limitData:
   0:
     min: 0
@@ -258,7 +258,7 @@ limitData:
     offset: 0
     ppmCenter: 0
     symetrical: 0
-    name: StbTrm
+    name: Gain
     curve: 0
 expoData:
   - srcRaw: Ail

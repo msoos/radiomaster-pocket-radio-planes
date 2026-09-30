@@ -200,7 +200,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Ail
+    name: AilR
   - destCh: 3
     srcRaw: I5
     weight: 100
@@ -219,7 +219,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Ail
+    name: AilL
   - destCh: 4
     srcRaw: SA
     weight: 100
@@ -257,7 +257,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Ail
+    name: AilLM
   - destCh: 5
     srcRaw: I3
     weight: 20
@@ -295,7 +295,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Ail
+    name: AilRM
   - destCh: 6
     srcRaw: I3
     weight: -20
@@ -333,7 +333,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: -100
-    name: Flap
+    name: FlapL
   - destCh: 8
     srcRaw: I3
     weight: 100
@@ -352,7 +352,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: -100
-    name: Flap
+    name: FlapR
   - destCh: 9
     srcRaw: I2
     weight: 100
@@ -425,7 +425,7 @@ limitData:
     offset: 0
     ppmCenter: 16
     symetrical: 0
-    name: MAilL
+    name: AilLM
     curve: 0
   6:
     min: 0
@@ -434,7 +434,7 @@ limitData:
     offset: 0
     ppmCenter: -33
     symetrical: 0
-    name: MAilR
+    name: AilRM
     curve: 0
   7:
     min: 458

@@ -19,8 +19,9 @@ Unless a model is listed as an exception below:
   threshold while armed (SA down), and plays `lowbat` every 10 s.
 - Names: inputs `Ail` `Ele` `Thr` `Rud` `Fla`; mix lines say what they add
   (`Ail`, `Flap`, `ThrCmp`, `FlpCmp`, ...); outputs name the servo (`AilL`/`AilR`,
-  `ElvL`/`ElvR`, `MAilL`/`MAilR`, `FlapL`/`FlapR`, `Arm`, ...). Left/right is a guess
-  where the model didn't say (Alula, Tanar, ASW28).
+  `ElvL`/`ElvR`, `AilLM`/`AilRM` (left/right middle), `FlapL`/`FlapR`, `Arm`, ...).
+  On left/right channels the main mix line carries the side too (`AilL`, `AilRM`,
+  `FlapR`, ...). Left/right is a guess where the model didn't say (Alula, Tanar, ASW28).
 - L1 and the telemetry screen reference sensors by their index in the model's
   sensor list (`tele(N)`), which differs between models.
 - Motor cut: throttle channel forced to −100 while SA is up.
@@ -67,10 +68,10 @@ Motor glider, conventional tail.
 
 ### Bixler (model03)
 Cloned from Phoenix16; flies with a flight controller.
-- CH1 Ail, CH2 Ele, CH3 Motor, CH4 Rud, CH5 flight-controller mode from SB, CH6 pot P1.
+- CH1 Ail, CH2 Ele, CH3 Motor, CH4 Rud, CH5 flight-controller mode from SB, CH6 `Gain` (stabilization strength) from the S1 knob.
 - **Arming is different:** ELRS switch arming on SA down, not a CH5 mix, because CH5 carries the mode.
 - SB: up = manual (`manmod`, also forces CH6 to −100), mid = acro, down = stabilized (`stbmod`).
-- Startup warning expects SB down (stabilized).
+- Startup warning expects SB down (stabilized) and S1 in the middle.
 
 ### Tanar (model04)
 - **Different channel order:** CH1 Ele, CH2 Rud, CH3 Motor, CH4 and CH6 ailerons (±35 % differential).

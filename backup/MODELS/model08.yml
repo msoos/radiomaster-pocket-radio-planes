@@ -197,7 +197,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Flap
+    name: FlapR
   - destCh: 3
     srcRaw: I3
     weight: 100
@@ -216,7 +216,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Flap
+    name: FlapL
   - destCh: 4
     srcRaw: SA
     weight: 100

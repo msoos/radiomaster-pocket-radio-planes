@@ -106,7 +106,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Ail
+    name: AilL
   - destCh: 0
     srcRaw: I4
     weight: -40
@@ -258,7 +258,7 @@ mixData:
     mixWarn: 0
     flightModes: 000000000
     offset: 0
-    name: Ail
+    name: AilR
   - destCh: 5
     srcRaw: I4
     weight: -40
