@@ -71,6 +71,7 @@ Cloned from Phoenix16; flies with a flight controller.
 - CH1 Ail, CH2 Ele, CH3 Motor, CH4 Rud, CH5 flight-controller mode from SB, CH6 `Gain` (stabilization strength) from the S1 knob.
 - **Arming is different:** ELRS switch arming on SA down, not a CH5 mix, because CH5 carries the mode.
 - SB: up = manual (`manmod`, also forces CH6 to −100), mid = acro, down = stabilized (`stbmod`).
+- CH5 has only two values on purpose: −100 on SB up and mid, +100 on SB down. Manual is acro with CH6 (gain) forced to −100.
 - Startup warning expects SB down (stabilized) and S1 in the middle.
 
 ### Tanar (model04)
@@ -97,6 +98,7 @@ Six-servo F5J competition glider.
 Earlier two-servo version of the F5J setup.
 - Rudder-elevator-flaps, no ailerons: CH1 Rud, CH2 Ele, CH3/CH4 flaps, **CH10 throttle**.
 - Same flight modes and callouts as F5J new.
+- The flap input runs the other way (`SB w-50 off73`), so `FlpCmp` moves the elevator the opposite way from F5J new when the flaps go down. This is deliberate.
 
 ### U-Glider (model09)
 Motor glider with flaperons.

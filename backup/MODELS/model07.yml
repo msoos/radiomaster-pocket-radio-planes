@@ -22,7 +22,7 @@ timers:
   1:
     swtch: SA2
     mode: ON
-    name: TOT
+    name: tot
     minuteBeep: 0
     countdownBeep: 0
     start: 0
@@ -60,7 +60,7 @@ flightModeData:
       3:
         value: 40
         mode: 0
-    name: noflap
+    name: norm
     fadeIn: 0
     fadeOut: 0
   1:
@@ -85,24 +85,6 @@ flightModeData:
         mode: 31
     swtch: SB2
     name: flap2
-    fadeIn: 0
-    fadeOut: 0
-  3:
-    trim:
-      0:
-        value: 0
-        mode: 31
-      1:
-        value: -126
-        mode: 6
-      2:
-        value: 0
-        mode: 31
-      3:
-        value: -48
-        mode: 6
-    swtch: NONE
-    name: ""
     fadeIn: 0
     fadeOut: 0
 mixData:
@@ -462,204 +444,6 @@ limitData:
     ppmCenter: 0
     symetrical: 0
     name: Thr
-    curve: 0
-  10:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  11:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  12:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  13:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  14:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  15:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  16:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  17:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  18:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  19:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  20:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  21:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  22:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  23:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  24:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  25:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  26:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  27:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  28:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  29:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  30:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
-    curve: 0
-  31:
-    min: 144
-    max: -66
-    revert: 0
-    offset: 0
-    ppmCenter: -20
-    symetrical: 0
-    name: ""
     curve: 0
 expoData:
   - srcRaw: Rud

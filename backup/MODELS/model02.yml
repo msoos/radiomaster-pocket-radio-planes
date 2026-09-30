@@ -60,7 +60,7 @@ flightModeData:
       3:
         value: 20
         mode: 0
-    name: ""
+    name: norm
     fadeIn: 0
     fadeOut: 0
   1:
@@ -231,15 +231,6 @@ limitData:
     ppmCenter: 0
     symetrical: 0
     name: Arm
-    curve: 0
-  5:
-    min: 0
-    max: 0
-    revert: 0
-    offset: 0
-    ppmCenter: 0
-    symetrical: 0
-    name: ""
     curve: 0
 expoData:
   - srcRaw: Ail
@@ -453,8 +444,8 @@ screens:
 varioData:
   source: 1
   centerSilent: 0
-  centerMax: -2
-  centerMin: 2
+  centerMax: 10
+  centerMin: -10
   min: 0
   max: 0
 rssiSource: none

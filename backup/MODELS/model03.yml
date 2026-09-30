@@ -60,7 +60,7 @@ flightModeData:
       3:
         value: 6
         mode: 0
-    name: ""
+    name: norm
     fadeIn: 0
     fadeOut: 0
   1:
@@ -479,10 +479,10 @@ screens:
               val: tele(4)
         3: ~
 varioData:
-  source: 1
+  source: none
   centerSilent: 0
-  centerMax: -2
-  centerMin: 2
+  centerMax: 0
+  centerMin: 0
   min: 0
   max: 0
 rssiSource: none

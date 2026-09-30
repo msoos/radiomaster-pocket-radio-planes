@@ -60,7 +60,7 @@ flightModeData:
       3:
         value: -2
         mode: 0
-    name: ""
+    name: norm
     fadeIn: 0
     fadeOut: 0
   1:

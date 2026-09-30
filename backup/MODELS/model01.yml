@@ -35,7 +35,7 @@ flightModeData:
       3:
         value: 0
         mode: 31
-    name: ""
+    name: norm
     fadeIn: 0
     fadeOut: 0
     gvars:
