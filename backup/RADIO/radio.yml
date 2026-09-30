@@ -1,4 +1,4 @@
-checksum:  11043
+checksum:  29877
 semver: 2.12.2
 board: pocket
 calib:
@@ -111,11 +111,6 @@ varioVolume: 1
 varioPitch: -100
 varioRange: 390
 varioRepeat: 0
-customFn:
-  0:
-    swtch: SA2
-    func: LOGS
-    def: 10
 backgroundVolume: 4
 dontPlayHello: 0
 modelQuickSelect: 0
@@ -132,6 +127,11 @@ pwrOnSpeed: 0
 pwrOffSpeed: 0
 pwrOffIfInactive: 0
 disablePwrOnOffHaptic: 0
+customFn:
+  0:
+    swtch: SA2
+    func: LOGS
+    def: 10,1
 sticksConfig:
   0:
     name: ""
