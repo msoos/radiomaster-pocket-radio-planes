@@ -606,13 +606,6 @@ moduleData:
         telemetryBaudrate: 0
         crsfArmingMode: 0
         crsfArmingTrigger: NONE
-failsafeChannels:
-  0:
-    val: -4
-  1:
-    val: 124
-  2:
-    val: -1024
 trainerData:
   mode: OFF
   channelsStart: 0

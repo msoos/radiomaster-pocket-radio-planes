@@ -90,12 +90,14 @@ Scale glider with motor and flaps.
 
 ### F5J new (model07)
 Six-servo F5J competition glider.
+- Shares the fuselage and receiver with F5J old: ELRS receiver number 2 in both.
 - CH1 Rud, CH2 Ele, CH3/CH4 ailerons, CH6/CH7 mid ailerons, CH8/CH9 flaps, **CH10 throttle**.
 - Elevator gets throttle and flap compensation.
 - Flight modes `flap1`/`flap2` on SB mid/down.
 
 ### F5J old (model08)
 Earlier two-servo version of the F5J setup.
+- Same fuselage (and receiver) as F5J new, different wing, so both use ELRS receiver number 2.
 - Rudder-elevator-flaps, no ailerons: CH1 Rud, CH2 Ele, CH3/CH4 flaps, **CH10 throttle**.
 - Same flight modes and callouts as F5J new.
 - The flap input runs the other way (`SB w-50 off73`), so `FlpCmp` moves the elevator the opposite way from F5J new when the flaps go down. This is deliberate.
