@@ -162,7 +162,7 @@ mixData:
     mltpx: ADD
     mixWarn: 0
     flightModes: 000000000
-    offset: 12
+    offset: 16
     name: ThrCmp
   - destCh: 1
     srcRaw: I4
