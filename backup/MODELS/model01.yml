@@ -266,6 +266,15 @@ inputNames:
     val: Thr
   3:
     val: Rud
+logicalSw:
+  0:
+    func: FUNC_VNEG
+    def: tele(0),34
+    delay: 20
+    duration: 0
+    andsw: SA2
+    lsPersist: 0
+    lsState: 0
 customFn:
   0:
     swtch: SA2
@@ -275,6 +284,10 @@ customFn:
     swtch: SA0
     func: PLAY_TRACK
     def: "disarm\x00\x00,1,1x"
+  2:
+    swtch: L1
+    func: PLAY_TRACK
+    def: "lowbat\x00\x00,1,10"
 swashR:
   type: TYPE_NONE
   value: 0

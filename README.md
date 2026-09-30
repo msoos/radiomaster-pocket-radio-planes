@@ -28,7 +28,7 @@ Unless a model is listed as an exception below:
 | # | Model | Type | Battery / low-bat | Motor cut | Vario (SD) | Flaps (SB) |
 |---|---|---|---|---|---|---|
 | 00 | Alula | Tailless DLG, no motor | 2S, < 7.2 V for 4 s | – | yes | – |
-| 01 | air75 | Betaflight quad (**hands off**) | – | via Betaflight | – | – |
+| 01 | air75 | Betaflight quad (**hands off**) | 1S, < 3.4 V for 2 s | via Betaflight | – | – |
 | 02 | Phoenix16 | Motor glider | 3S, < 11.1 V for 0.8 s | CH3 | yes | – |
 | 03 | Bixler | Plane with flight controller | – | CH3 | – | – |
 | 04 | Tanar | Plane | 3S, < 11.1 V for 0.8 s | CH3 | – | – |
@@ -52,6 +52,7 @@ Tailless DLG (discus launch glider) with elevons.
 Betaflight whoop. Everything is done in the flight controller; do not edit.
 - CH1–4 AETR, CH5 SA arm, CH6 SB mode, CH7 SE flip-over-after-crash, CH8 SD beeper.
 - CH3 throttle is limited to 60 %.
+- Low-battery warning like the others (L1, armed only), tuned for 1S.
 - All switches must be up at startup.
 
 ### Phoenix16 (model02)
