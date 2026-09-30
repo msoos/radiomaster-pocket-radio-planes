@@ -4,8 +4,8 @@ header:
   bitmap: ""
   labels: ""
   modelId:
-    1:
-      val: 2
+    0:
+      val: 34
 timers:
   0:
     swtch: NONE
