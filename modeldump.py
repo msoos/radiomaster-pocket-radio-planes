@@ -57,6 +57,8 @@ def dump(d):
         if c['func'] == 'OVERRIDE_CHANNEL':
             n, rest = dv.split(',', 1)
             dv = f'{ch(n)},{rest}'
+        elif c['func'] == 'PLAY_VALUE':
+            dv = src(dv)
         o.append(f"SF {src(c['swtch'])} {c['func']} {dv}")
     o.append('startup ' + ' '.join(f"{s}={p['pos']}" for s, p in (d.get('switchWarning') or {}).items())
              + f" pots={d.get('potsWarnMode')}")

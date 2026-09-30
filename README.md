@@ -13,9 +13,10 @@ Unless a model is listed as an exception below:
 | Switch | Function |
 |---|---|
 | SA | Arm (CH5, ELRS arming channel). Up = disarmed, down = armed; callouts `disarm` / `armed` |
-| SB | Flaps / flight modes (up, 1, 2), callouts `flapup` / `flp1` / `flp2` |
+| SB | Flaps / flight modes (up, 1, 2), callouts `flapup` / `flp1` / `flp2`. Startup warning expects up (flaps up) |
 | SC | Rates: up = high, mid = medium, down = low (`rathi` / `ratmed` / `ratlow`). Startup warning expects mid |
 | SD | Vario: down = on (`vrion`), up = off (`vrioff`) |
+| SE | Momentary: press for an altitude callout on models with a vario (not Alula, where SE is launch mode) |
 
 - Low-battery warning: logical switch L1 fires when RxBt stays below the
   threshold while armed (SA down), and plays `lowbat` every 10 s.
@@ -88,7 +89,7 @@ Flying wing.
 
 ### ASW28 (model06)
 Scale glider with motor and flaps.
-- CH1/CH7 ailerons (±40 % differential, camber from flaps via curve), CH2 Ele (with throttle and flap compensation), CH3 Thr, CH4 Rud (20 %), CH6 flaps (curve).
+- CH1/CH7 ailerons (±40 % differential, camber from flaps via curve), CH2 Ele (with throttle and flap compensation), CH3 Thr, CH4 Rud, CH6 flaps (curve).
 - Flight modes `flap1`/`flap2` on SB mid/down, each with its own elevator trim.
 
 ### F5J new (model07)

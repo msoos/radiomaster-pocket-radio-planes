@@ -468,6 +468,10 @@ customFn:
     swtch: SA2
     func: PLAY_TRACK
     def: "armed\x00\x00\x00,1,1x"
+  14:
+    swtch: SE2
+    func: PLAY_VALUE
+    def: tele(0),1,1x
 swashR:
   type: TYPE_NONE
   value: 0
@@ -480,6 +484,8 @@ swashR:
 thrTraceSrc: Thr
 switchWarning:
   SA:
+    pos: up
+  SB:
     pos: up
   SC:
     pos: mid

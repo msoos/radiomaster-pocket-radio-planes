@@ -396,6 +396,10 @@ customFn:
     swtch: SD0
     func: PLAY_TRACK
     def: "vrioff\x00\x00,1,1x"
+  10:
+    swtch: SE2
+    func: PLAY_VALUE
+    def: tele(0),1,1x
 swashR:
   type: TYPE_NONE
   value: 0
