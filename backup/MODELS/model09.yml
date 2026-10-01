@@ -66,7 +66,7 @@ flightModeData:
   1:
     trim:
       1:
-        value: 48
+        value: -18
         mode: 2
       2:
         value: 0
@@ -78,7 +78,7 @@ flightModeData:
   2:
     trim:
       1:
-        value: 42
+        value: -24
         mode: 4
       2:
         value: 0
