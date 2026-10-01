@@ -1,4 +1,4 @@
-semver: 2.12.2
+semver: 2.12.4
 header:
   name: Tanar
   bitmap: ""
@@ -183,11 +183,11 @@ limitData:
     name: Ele
     curve: 0
   1:
-    min: 0
-    max: 0
+    min: 250
+    max: -350
     revert: 1
     offset: 0
-    ppmCenter: 0
+    ppmCenter: -18
     symetrical: 0
     name: Rud
     curve: 0

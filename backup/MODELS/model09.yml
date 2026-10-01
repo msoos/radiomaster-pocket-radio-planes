@@ -1,4 +1,4 @@
-semver: 2.12.2
+semver: 2.12.4
 header:
   name: U-Glider
   bitmap: ""
@@ -52,7 +52,7 @@ flightModeData:
         value: -34
         mode: 0
       1:
-        value: 92
+        value: 26
         mode: 0
       2:
         value: -2
