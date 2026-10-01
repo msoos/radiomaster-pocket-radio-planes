@@ -411,6 +411,8 @@ screens:
               val: tele(10)
         2:
           sources:
+            0:
+              val: tele(6)
             1:
               val: tele(2)
         3: ~

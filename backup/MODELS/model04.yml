@@ -419,6 +419,8 @@ screens:
               val: Tmr2
         2:
           sources:
+            0:
+              val: tele(10)
             1:
               val: tele(6)
         3: ~

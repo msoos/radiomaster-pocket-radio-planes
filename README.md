@@ -30,7 +30,7 @@ Unless a model is listed as an exception below:
 - Motor cut: throttle channel forced to −100 while SA is up.
 - SD-card logging: a global function logs telemetry every 1 s while SA is down, so each armed period gets its own log.
 - Timers: Timer 1 `thr` counts throttle-relative with minute beeps; Timer 2 `tot` runs while SA is down.
-- Telemetry screen: `thr` timer | RxBt, `tot` timer | altitude, and link quality (RQly); items a model lacks are left blank.
+- Telemetry screen: `thr` timer | RxBt, `tot` timer | altitude, TX power (TPWR) | link quality (RQly); items a model lacks are left blank.
 
 ## Overview
 

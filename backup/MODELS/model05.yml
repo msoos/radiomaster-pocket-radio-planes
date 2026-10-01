@@ -385,6 +385,8 @@ screens:
               val: tele(15)
         2:
           sources:
+            0:
+              val: tele(11)
             1:
               val: tele(7)
         3: ~

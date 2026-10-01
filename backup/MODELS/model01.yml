@@ -332,7 +332,10 @@ screens:
               val: tele(14)
             1:
               val: tele(2)
-        2: ~
+        2:
+          sources:
+            0:
+              val: tele(10)
         3: ~
 varioData:
   source: none
