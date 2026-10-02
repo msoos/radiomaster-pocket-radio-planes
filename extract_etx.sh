@@ -6,3 +6,4 @@ cd "$(dirname "$0")"
 # start fresh so models deleted on the radio don't linger
 rm -rf backup/RADIO backup/MODELS
 unzip -qo "$etx" -d backup
+./check_sensors.py

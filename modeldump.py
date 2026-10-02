@@ -86,4 +86,5 @@ def main(argv):
             print('\n'.join(f'{name}: {l}' if len(models) > 1 else l for l in dump(d)))
 
 
-main(sys.argv[1:] or sorted(p.stem for p in MODELS.glob('*.yml')))
+if __name__ == '__main__':
+    main(sys.argv[1:] or sorted(p.stem for p in MODELS.glob('*.yml')))
