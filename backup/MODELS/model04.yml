@@ -345,7 +345,7 @@ logicalSw:
   0:
     func: FUNC_VNEG
     def: tele(0),111
-    delay: 8
+    delay: 40
     duration: 0
     andsw: SA2
     lsPersist: 0
