@@ -5,6 +5,12 @@ from pathlib import Path
 
 MODELS = Path(__file__).parent / 'backup/MODELS'
 POS = {'0': '↑', '1': '-', '2': '↓'}
+SWNAME = {k: v['name'] for k, v in yaml.load((MODELS.parent / 'RADIO/radio.yml').read_text(), Loader=yaml.BaseLoader)
+          .get('switchConfig', {}).items() if v.get('name')}
+
+
+def sw(s):
+    return f'{s}({SWNAME[s]})' if s in SWNAME else s
 
 
 def load(arg):
@@ -27,7 +33,7 @@ def dump(d):
         s = re.sub(r'tele\((\d+)\)', lambda m: sensors.get(int(m[1]), m[0]), s)
         s = re.sub(r'^I(\d+)$', lambda m: 'I:' + inputs.get(int(m[1]), m[1]), s)
         s = re.sub(r'ch\((\d+)\)', lambda m: ch(m[1]), s)
-        return re.sub(r'^(S[A-H]|L\d+)([012])$', lambda m: m[1] + POS[m[2]] if m[1][0] == 'S' else m[0], s)
+        return re.sub(r'\b(S[A-H])([012])?\b', lambda m: sw(m[1]) + (POS[m[2]] if m[2] else ''), s)
 
     def curve(c):
         t, v = c['type'], c['value']
@@ -41,8 +47,8 @@ def dump(d):
                          for i, v in sorted(m.get('trim', {}).items()) if k != '0' or v['mode'] != '0')
         o.append(f"FM{k} {m.get('name')!r} sw={src(m.get('swtch', ''))} {trims}".rstrip())
     for e in d.get('expoData') or []:
-        o.append((f"input {inputs.get(int(e['chn']), e['chn']):<4} <- {src(e['srcRaw']):<4} {'w' + e['weight']:<5}{curve(e['curve']):<7}"
-                  f" sw={src(e['swtch']):<4}" + (f" off{e['offset']}" if e['offset'] != '0' else '')
+        o.append((f"input {inputs.get(int(e['chn']), e['chn']):<4} <- {src(e['srcRaw']):<7} {'w' + e['weight']:<5}{curve(e['curve']):<7}"
+                  f" sw={src(e['swtch']):<8}" + (f" off{e['offset']}" if e['offset'] != '0' else '')
                   + (f" name={e['name']}" if e['name'] else '')).rstrip())
     for m in d.get('mixData') or []:
         extra = ''.join(f' {k}={m[k]}' for k in ('offset', 'swtch', 'flightModes', 'mltpx', 'carryTrim')
@@ -54,7 +60,7 @@ def dump(d):
         o.append((f"out {ch(k):<11} " + ('rev' if l['revert'] == '1' else '   ')
                   + ''.join(f' {n}={v / 10:g}%' for n, v, dflt in lim if v != dflt)).rstrip())
     for k, l in (d.get('logicalSw') or {}).items():
-        o.append(f"L{int(k) + 1} {l['func']} {src(l['def'].split(',')[0])},{l['def'].split(',', 1)[1]}"
+        o.append(f"L{int(k) + 1} {l['func']} {','.join(src(x) for x in l['def'].split(','))}"
                  f" delay={int(l['delay']) / 10}s and={src(l['andsw'])}")
     for k, c in sorted((d.get('customFn') or {}).items(), key=lambda kv: int(kv[0])):
         dv = c['def'].replace('\x00', '')
@@ -63,8 +69,8 @@ def dump(d):
             dv = f'{ch(n)},{rest}'
         elif c['func'] == 'PLAY_VALUE':
             dv = src(dv)
-        o.append(f"SF {src(c['swtch']):<3} {c['func']:<16} {dv}")
-    o.append('startup ' + ' '.join(f"{s}={p['pos']}" for s, p in (d.get('switchWarning') or {}).items())
+        o.append(f"SF {src(c['swtch']):<8} {c['func']:<16} {dv}")
+    o.append('startup ' + ' '.join(f"{sw(s)}={p['pos']}" for s, p in (d.get('switchWarning') or {}).items())
              + f" pots={d.get('potsWarnMode')}")
     for k, s in (d.get('screens') or {}).items():
         for li, line in (s['u'].get('lines') or {}).items():

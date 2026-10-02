@@ -6,6 +6,19 @@ header:
   modelId:
     0:
       val: 60
+timers:
+  0:
+    swtch: SA2
+    mode: ON
+    name: flt
+    minuteBeep: 1
+    countdownBeep: 0
+    start: 0
+    persistent: 0
+    countdownStart: -1
+    value: 0
+    showElapsed: 0
+    extraHaptic: 0
 noGlobalFunctions: 0
 thrTrim: 0
 trimInc: 0
@@ -275,6 +288,14 @@ logicalSw:
     andsw: SA2
     lsPersist: 0
     lsState: 0
+  1:
+    func: FUNC_AND
+    def: SA0,!TELEMETRY_STREAMING
+    delay: 0
+    duration: 0
+    andsw: NONE
+    lsPersist: 0
+    lsState: 0
 customFn:
   0:
     swtch: SA2
@@ -288,6 +309,10 @@ customFn:
     swtch: L1
     func: PLAY_TRACK
     def: "lowbat\x00\x00,1,10"
+  3:
+    swtch: L2
+    func: RESET
+    def: Tmr1,1
 swashR:
   type: TYPE_NONE
   value: 0
@@ -323,19 +348,21 @@ screens:
         0:
           sources:
             0:
-              val: tele(0)
-            1:
               val: TX_TIME
+            1:
+              val: tele(0)
         1:
           sources:
             0:
               val: tele(14)
             1:
-              val: tele(2)
+              val: Tmr1
         2:
           sources:
             0:
               val: tele(10)
+            1:
+              val: tele(6)
         3: ~
 varioData:
   source: none
