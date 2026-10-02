@@ -1,6 +1,6 @@
 # RadioMaster Pocket model backup
 
-EdgeTX 2.12.2 backup of a RadioMaster Pocket with an internal ELRS (CRSF) module.
+EdgeTX 2.12.4 backup of a RadioMaster Pocket with an internal ELRS (CRSF) module.
 `backup/` is the unpacked `backup.etx`; edit the YAML there, then run
 `./make_etx.sh` to rebuild the `.etx` for restoring on the radio. It runs
 `./fix_checksum.py` first, because EdgeTX rejects a `radio.yml` whose checksum line
