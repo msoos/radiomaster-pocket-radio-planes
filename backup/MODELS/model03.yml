@@ -389,6 +389,15 @@ inputNames:
     val: Rud
   4:
     val: Mod
+logicalSw:
+  0:
+    func: FUNC_AND
+    def: SA0,!TELEMETRY_STREAMING
+    delay: 0
+    duration: 0
+    andsw: NONE
+    lsPersist: 0
+    lsState: 0
 customFn:
   0:
     swtch: SB0
@@ -430,6 +439,10 @@ customFn:
     swtch: SC2
     func: PLAY_TRACK
     def: "ratlow\x00\x00,1,1x"
+  10:
+    swtch: L1
+    func: RESET
+    def: Tmr2,1
 swashR:
   type: TYPE_NONE
   value: 0

@@ -531,6 +531,15 @@ points:
     val: -77
   9:
     val: 0
+logicalSw:
+  0:
+    func: FUNC_AND
+    def: SA0,!TELEMETRY_STREAMING
+    delay: 0
+    duration: 0
+    andsw: NONE
+    lsPersist: 0
+    lsState: 0
 customFn:
   0:
     swtch: SA0
@@ -584,6 +593,10 @@ customFn:
     swtch: SE2
     func: PLAY_VALUE
     def: tele(5),1,1x
+  13:
+    swtch: L1
+    func: RESET
+    def: Tmr2,1
 swashR:
   type: TYPE_NONE
   value: 0

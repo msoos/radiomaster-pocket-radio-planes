@@ -328,6 +328,14 @@ logicalSw:
     andsw: SA2
     lsPersist: 0
     lsState: 0
+  1:
+    func: FUNC_AND
+    def: SA0,!TELEMETRY_STREAMING
+    delay: 0
+    duration: 0
+    andsw: NONE
+    lsPersist: 0
+    lsState: 0
 customFn:
   0:
     swtch: SD2
@@ -373,6 +381,10 @@ customFn:
     swtch: SE2
     func: PLAY_VALUE
     def: tele(0),1,1x
+  11:
+    swtch: L2
+    func: RESET
+    def: Tmr2,1
 swashR:
   type: TYPE_NONE
   value: 0

@@ -314,6 +314,14 @@ logicalSw:
     andsw: SA2
     lsPersist: 0
     lsState: 0
+  1:
+    func: FUNC_AND
+    def: SA0,!TELEMETRY_STREAMING
+    delay: 0
+    duration: 0
+    andsw: NONE
+    lsPersist: 0
+    lsState: 0
 customFn:
   0:
     swtch: SA0
@@ -343,6 +351,10 @@ customFn:
     swtch: L1
     func: PLAY_TRACK
     def: "lowbat\x00\x00,1,10"
+  7:
+    swtch: L2
+    func: RESET
+    def: Tmr2,1
 swashR:
   type: TYPE_NONE
   value: 0

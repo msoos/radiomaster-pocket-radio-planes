@@ -1,4 +1,4 @@
-checksum:  23400
+checksum:  10131
 semver: 2.12.4
 board: pocket
 calib:
@@ -22,14 +22,14 @@ calib:
     mid: 1030
     spanNeg: 483
     spanPos: 484
-currModelFilename: model10.yml
+currModelFilename: model8.yml
 vBatWarn: 69
 txVoltageCalibration: -29
 vBatMin: 67
 vBatMax: 84
 backlightColor: 0
 contrast: 14
-currModel: 9
+currModel: 7
 backlightMode: backlight_mode_all
 trainer:
   calib:
@@ -92,7 +92,7 @@ speakerVolume: 9
 backlightBright: 85
 blOffBright: 0
 switchesDelay: 0
-globalTimer: 1209128
+globalTimer: 1210313
 bluetoothName: taranis
 bluetoothBaudrate: 0
 bluetoothMode: OFF
