@@ -41,14 +41,18 @@ def dump(d):
                          for i, v in sorted(m.get('trim', {}).items()) if k != '0' or v['mode'] != '0')
         o.append(f"FM{k} {m.get('name')!r} sw={src(m.get('swtch', ''))} {trims}".rstrip())
     for e in d.get('expoData') or []:
-        o.append(f"input {inputs.get(int(e['chn']), e['chn'])} <- {src(e['srcRaw'])} w{e['weight']}{curve(e['curve'])}"
-                 f" sw={src(e['swtch'])}" + (f" off{e['offset']}" if e['offset'] != '0' else '') + (f" name={e['name']}" if e['name'] else ''))
+        o.append((f"input {inputs.get(int(e['chn']), e['chn']):<4} <- {src(e['srcRaw']):<4} {'w' + e['weight']:<5}{curve(e['curve']):<7}"
+                  f" sw={src(e['swtch']):<4}" + (f" off{e['offset']}" if e['offset'] != '0' else '')
+                  + (f" name={e['name']}" if e['name'] else '')).rstrip())
     for m in d.get('mixData') or []:
         extra = ''.join(f' {k}={m[k]}' for k in ('offset', 'swtch', 'flightModes', 'mltpx', 'carryTrim')
                         if m[k] not in ('0', 'NONE', '000000000', 'ADD'))
-        o.append(f"mix {ch(m['destCh'])} {m['name']!r} <- {src(m['srcRaw'])} w{m['weight']}{curve(m['curve'])}{extra}")
+        o.append(f"mix {ch(m['destCh']):<11} {m['name']:<6} <- {src(m['srcRaw']):<10} {'w' + m['weight']:<5}{curve(m['curve'])}{extra}".rstrip())
     for k, l in (d.get('limitData') or {}).items():
-        o.append(f"out {ch(k)} rev={l['revert']} min={l['min']} max={l['max']} sub={l['offset']}")
+        # min/max are stored as offsets from -100%/+100%, in 0.1% steps
+        lim = (('min', int(l['min']) - 1000, -1000), ('max', int(l['max']) + 1000, 1000), ('sub', int(l['offset']), 0))
+        o.append((f"out {ch(k):<11} " + ('rev' if l['revert'] == '1' else '   ')
+                  + ''.join(f' {n}={v / 10:g}%' for n, v, dflt in lim if v != dflt)).rstrip())
     for k, l in (d.get('logicalSw') or {}).items():
         o.append(f"L{int(k) + 1} {l['func']} {src(l['def'].split(',')[0])},{l['def'].split(',', 1)[1]}"
                  f" delay={int(l['delay']) / 10}s and={src(l['andsw'])}")
@@ -59,7 +63,7 @@ def dump(d):
             dv = f'{ch(n)},{rest}'
         elif c['func'] == 'PLAY_VALUE':
             dv = src(dv)
-        o.append(f"SF {src(c['swtch'])} {c['func']} {dv}")
+        o.append(f"SF {src(c['swtch']):<3} {c['func']:<16} {dv}")
     o.append('startup ' + ' '.join(f"{s}={p['pos']}" for s, p in (d.get('switchWarning') or {}).items())
              + f" pots={d.get('potsWarnMode')}")
     for k, s in (d.get('screens') or {}).items():
@@ -67,8 +71,11 @@ def dump(d):
             cols = (line if isinstance(line, dict) else {}).get('sources') or {}
             o.append(f"screen{k} line{li} " + ' | '.join(src(cols[c]['val']) if c in cols else '-' for c in ('0', '1')))
     v = d.get('varioData') or {}
-    o.append(f"vario src={src('tele(%s)' % v['source']) if v.get('source', 'none') != 'none' else 'none'} "
-             + ' '.join(f'{k}={v[k]}' for k in ('centerSilent', 'centerMin', 'centerMax', 'min', 'max')))
+    if v.get('source', 'none') == 'none':
+        o.append('vario none')
+    else:
+        o.append(f"vario src={src('tele(%s)' % v['source'])} "
+                 + ' '.join(f'{k}={v[k]}' for k in ('centerSilent', 'centerMin', 'centerMax', 'min', 'max')))
     crsf = d['moduleData']['0']['mod']['crsf']
     o.append(f"crsf arming={crsf['crsfArmingMode']} trigger={src(crsf['crsfArmingTrigger'])}")
     o.append('sensors ' + ' '.join(sorted(sensors.values())))
@@ -82,8 +89,11 @@ def main(argv):
         (na, a), (nb, b) = models
         sys.stdout.writelines(l + '\n' for l in difflib.unified_diff(dump(a), dump(b), na, nb, n=0, lineterm=''))
     else:
-        for name, d in models:
-            print('\n'.join(f'{name}: {l}' if len(models) > 1 else l for l in dump(d)))
+        tty = sys.stdout.isatty()
+        for i, (name, d) in enumerate(models):
+            title = f"== {name}: {d['header']['name']} =="
+            print('\n' * (i > 0) + (f'\033[1;38;5;217m{title}\033[0m' if tty else title))
+            print('\n'.join(re.sub(r'^\S+', '\033[32m\\g<0>\033[0m', l) if tty else l for l in dump(d)))
 
 
 if __name__ == '__main__':
