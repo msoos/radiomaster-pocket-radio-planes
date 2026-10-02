@@ -404,7 +404,7 @@ limitData:
     offset: 0
     ppmCenter: 6
     symetrical: 0
-    name: AilL
+    name: AiLM
     curve: 0
   6:
     min: 0
@@ -413,7 +413,7 @@ limitData:
     offset: 0
     ppmCenter: -33
     symetrical: 0
-    name: AilR
+    name: AiRM
     curve: 0
   7:
     min: 476

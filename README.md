@@ -22,7 +22,8 @@ Unless a model is listed as an exception below:
   threshold while armed (SA down), and plays `lowbat` every 10 s.
 - Names: inputs `Ail` `Ele` `Thr` `Rud` `Fla`; mix lines say what they add
   (`Ail`, `Flap`, `ThrCmp`, `FlpCmp`, ...); outputs name the servo (`AilL`/`AilR`,
-  `ElvL`/`ElvR`, `AilLM`/`AilRM` (left/right middle), `FlapL`/`FlapR`, `Arm`, ...).
+  `ElvL`/`ElvR`, `AiLM`/`AiRM` (left/right middle), `FlaL`/`FlaR`, `Arm`, ...);
+  output names are at most 4 characters, which is all the radio allows.
   On left/right channels the main mix line carries the side too (`AilL`, `AilRM`,
   `FlapR`, ...)
 - L1 and the telemetry screen reference sensors by their index in the model's
