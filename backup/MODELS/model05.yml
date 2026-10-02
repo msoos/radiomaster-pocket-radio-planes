@@ -355,6 +355,10 @@ customFn:
     swtch: L2
     func: RESET
     def: Tmr2,1
+  8:
+    swtch: L2
+    func: RESET
+    def: Tmr1,1
 swashR:
   type: TYPE_NONE
   value: 0
