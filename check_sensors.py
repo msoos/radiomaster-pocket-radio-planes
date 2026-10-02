@@ -6,7 +6,7 @@ from modeldump import MODELS, load
 # (line, column) -> sensor shown on the telemetry screen
 SCREEN = {(0, 1): 'RxBt', (1, 1): 'Alt', (2, 0): 'TPWR', (2, 1): 'RQly'}
 SCREEN_BY_MODEL = {
-    'air75': {(0, 0): 'RxBt', (1, 0): 'FM', (1, 1): 'Capa', (2, 0): 'TPWR'},
+    'air75': {(0, 1): 'RxBt', (1, 0): 'FM', (2, 0): 'TPWR', (2, 1): 'RQly'},
     'Tanar': {(0, 1): 'RxBt', (2, 0): 'TPWR', (2, 1): 'RQly'},
 }
 
