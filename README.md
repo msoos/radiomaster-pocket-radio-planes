@@ -24,7 +24,7 @@ Unless a model is listed as an exception below:
   (`Ail`, `Flap`, `ThrCmp`, `FlpCmp`, ...); outputs name the servo (`AilL`/`AilR`,
   `ElvL`/`ElvR`, `AilLM`/`AilRM` (left/right middle), `FlapL`/`FlapR`, `Arm`, ...).
   On left/right channels the main mix line carries the side too (`AilL`, `AilRM`,
-  `FlapR`, ...). Left/right is a guess where the model didn't say (Alula, Tanar).
+  `FlapR`, ...)
 - L1 and the telemetry screen reference sensors by their index in the model's
   sensor list (`tele(N)`), which differs between models.
 - Motor cut: throttle channel forced to −100 while SA is up.
