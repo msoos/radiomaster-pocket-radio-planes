@@ -63,33 +63,6 @@ flightModeData:
     name: norm
     fadeIn: 0
     fadeOut: 0
-  1:
-    trim:
-      2:
-        value: 0
-        mode: 31
-    swtch: NONE
-    name: ""
-    fadeIn: 0
-    fadeOut: 0
-  2:
-    trim:
-      0:
-        value: 46
-        mode: 0
-      1:
-        value: 2
-        mode: 0
-      2:
-        value: 0
-        mode: 31
-      3:
-        value: 2
-        mode: 0
-    swtch: NONE
-    name: ""
-    fadeIn: 0
-    fadeOut: 0
 mixData:
   - destCh: 0
     srcRaw: I0
