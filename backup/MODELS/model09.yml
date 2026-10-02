@@ -505,6 +505,38 @@ logicalSw:
     andsw: NONE
     lsPersist: 0
     lsState: 0
+  2:
+    func: FUNC_VNEG
+    def: Thr,-97
+    delay: 0
+    duration: 0
+    andsw: SA2
+    lsPersist: 0
+    lsState: 0
+  3:
+    func: FUNC_AND
+    def: SA0,SA0
+    delay: 20
+    duration: 0
+    andsw: NONE
+    lsPersist: 0
+    lsState: 0
+  4:
+    func: FUNC_STICKY
+    def: L3,L4
+    delay: 0
+    duration: 0
+    andsw: SA2
+    lsPersist: 0
+    lsState: 0
+  5:
+    func: FUNC_AND
+    def: SA2,!L5
+    delay: 5
+    duration: 0
+    andsw: NONE
+    lsPersist: 0
+    lsState: 0
 customFn:
   0:
     swtch: SA0
@@ -543,7 +575,7 @@ customFn:
     func: PLAY_TRACK
     def: "disarm\x00\x00,1,1x"
   9:
-    swtch: SA2
+    swtch: L5
     func: PLAY_TRACK
     def: "armed\x00\x00\x00,1,1x"
   10:
@@ -558,6 +590,14 @@ customFn:
     swtch: L2
     func: RESET
     def: Tmr1,1
+  13:
+    swtch: "!L5"
+    func: OVERRIDE_CHANNEL
+    def: 2,-100,1
+  14:
+    swtch: L6
+    func: PLAY_TRACK
+    def: "thrdis\x00\x00,1,1"
 swashR:
   type: TYPE_NONE
   value: 0

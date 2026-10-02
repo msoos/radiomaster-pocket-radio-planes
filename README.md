@@ -27,10 +27,48 @@ Unless a model is listed as an exception below:
   `FlapR`, ...)
 - L1 and the telemetry screen reference sensors by their index in the model's
   sensor list (`tele(N)`), which differs between models.
-- Motor cut: throttle channel forced to −100 while SA is up.
+- Motor cut and arming: see [Safety arm setup](#safety-arm-setup).
 - SD-card logging: a global function logs telemetry every 1 s while SA is down, so each armed period gets its own log.
 - Timers: Timer 1 `thr` counts throttle-relative with minute beeps; Timer 2 `tot` runs while SA is down.
 - Telemetry screen: `thr` timer | RxBt, `tot` timer | altitude, TX power (TPWR) | link quality (RQly); items a model lacks are left blank.
+
+## Safety arm setup
+
+On every model with a motor except air75 (Betaflight does its own arming).
+
+- SA up cuts the motor at once: the throttle channel is forced to −100.
+- SA down releases the throttle only if the stick is below −97. Otherwise the
+  throttle stays at −100 and `thrdis` plays every second until the stick is
+  brought to idle; it then arms without a second flip.
+- Grace window: if SA was up for less than 2 s (accidental disarm in flight),
+  SA down resumes at the current stick position.
+- `disarm` plays on SA up, `armed` when the throttle is actually released.
+
+Logical switches, in this order; the numbers differ per model (L2–L5 on Bixler
+and ASW28, L3–L6 on the others):
+
+| Role | Function | Meaning |
+|---|---|---|
+| idle | `a<x` Thr, −97, AND SA down | SA down and stick at idle |
+| long disarm | SA up, delay 2 s | SA has been up for 2 s |
+| armed | Sticky: set by *idle*, reset by *long disarm*, AND SA down | throttle released |
+| refused | SA down AND not *armed*, delay 0.5 s | arming refused, stick too high |
+
+The 0.5 s delay on *refused* keeps the warning quiet during a normal arm.
+
+Special functions:
+
+| Switch | Function |
+|---|---|
+| SA up | Override throttle channel to −100 |
+| not *armed* | Override throttle channel to −100 |
+| *armed* | Play `armed` |
+| *refused* | Play `thrdis`, repeat 1 s |
+| SA up | Play `disarm` |
+
+Only the throttle follows *armed*. The CH5 arm channel, the `tot` timer, the
+low-battery alarm and logging follow SA itself, so they are active while arming
+is being refused.
 
 ## Overview
 
@@ -38,13 +76,13 @@ Unless a model is listed as an exception below:
 |---|---|---|---|---|---|---|
 | 00 | Alula | Tailless DLG, no motor | 2S, < 7.2 V for 4 s | – | yes | – |
 | 01 | air75 | Betaflight quad (**hands off**) | 1S, < 3.4 V for 2 s | via Betaflight | – | – |
-| 02 | Phoenix16 | Motor glider | 3S, < 11.1 V for 0.8 s | CH3 | yes | – |
+| 02 | Phoenix16 | Motor glider | 3S, < 11.1 V for 4 s | CH3 | yes | – |
 | 03 | Bixler | Plane with flight controller | – | CH3 | – | – |
-| 04 | Tanar | Plane | 3S, < 11.1 V for 0.8 s | CH3 | – | – |
-| 05 | Super Ray | Flying wing | 3S, < 11.1 V for 0.8 s | CH3 | – | – |
+| 04 | Tanar | Plane | 3S, < 11.1 V for 4 s | CH3 | – | – |
+| 05 | Super Ray | Flying wing | 3S, < 11.1 V for 4 s | CH3 | – | – |
 | 06 | ASW28 | Scale glider with motor, flaps | – | CH3 | yes | yes |
-| 07 | F5J new | F5J glider, 6 wing servos | 3S, < 11.1 V for 0.8 s | CH10 | yes | yes |
-| 08 | F5J old | F5J glider, flaps only (RES) | 3S, < 11.1 V for 0.8 s | CH10 | yes | yes |
+| 07 | F5J new | F5J glider, 6 wing servos | 3S, < 11.1 V for 4 s | CH10 | yes | yes |
+| 08 | F5J old | F5J glider, flaps only (RES) | 3S, < 11.1 V for 4 s | CH10 | yes | yes |
 | 09 | U-Glider | Motor glider, flaperons | 2S, < 7.2 V for 4 s | CH3 | yes | yes |
 
 ## Models
@@ -67,7 +105,6 @@ Betaflight whoop. Everything is done in the flight controller; do not edit.
 ### Phoenix16 (model02)
 Motor glider, conventional tail.
 - CH1 Ail, CH2 Ele, CH3 Motor, CH4 Rud.
-- Flight modes 1 and 2 exist but have no switch.
 - Startup warning expects SD down (vario on).
 
 ### Bixler (model03)
