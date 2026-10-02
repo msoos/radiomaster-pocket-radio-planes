@@ -94,6 +94,12 @@ def main(argv):
             title = f"== {name}: {d['header']['name']} =="
             print('\n' * (i > 0) + (f'\033[1;38;5;217m{title}\033[0m' if tty else title))
             print('\n'.join(re.sub(r'^\S+', '\033[32m\\g<0>\033[0m', l) if tty else l for l in dump(d)))
+    dead = [f"{name} ({d['header']['name']}): FM{k} has no switch, so it can never be active"
+            for name, d in models for k, m in (d.get('flightModeData') or {}).items()
+            if k != '0' and m.get('swtch', 'NONE') == 'NONE']
+    if dead:
+        err = '\033[1;31mERROR\033[0m' if sys.stderr.isatty() else 'ERROR'
+        sys.exit('\n' + '\n'.join(f'{err}: {l}' for l in dead))
 
 
 if __name__ == '__main__':
