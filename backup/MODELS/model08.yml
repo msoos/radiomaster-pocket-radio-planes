@@ -258,12 +258,12 @@ limitData:
     curve: 0
   2:
     min: 1000
-    max: -543
+    max: -541
     revert: 0
     offset: 0
     ppmCenter: 67
     symetrical: 0
-    name: FlapR
+    name: FlaR
     curve: 0
   3:
     min: 999
@@ -272,7 +272,7 @@ limitData:
     offset: 0
     ppmCenter: -47
     symetrical: 0
-    name: FlapL
+    name: FlaR
     curve: 0
   4:
     min: 0
