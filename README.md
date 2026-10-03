@@ -148,3 +148,27 @@ Motor glider with flaperons.
 - CH1/CH6 flaperons (aileron + 40 % flap), CH2 Ele (with throttle and flap compensation), CH3 Motor, CH4 Rud.
 - Flaps on SB (up / mid / down) with callouts.
 - Flight modes `flap1`/`flap2` on SB mid/down.
+
+## Sounds
+
+The voice pack on the SD card is the stock English one, sped up 1.5x (same
+pitch) with the silence at the start and end of each clip trimmed, so callouts
+are shorter and overlap less.
+
+- `sd-card/` is not in git. `sd-card/SOUNDS/en` is the fast pack that the radio
+  plays, `sd-card/SOUNDS/en.orig` the untouched originals.
+- Rebuild with `./speedup_sounds.py sd-card/SOUNDS/en.orig sd-card/SOUNDS/en`
+  (needs `ffmpeg`; `--speed` changes the factor).
+- EdgeTX only reads `SOUNDS/<two-letter voice language>`, so the fast pack has
+  to live in `en`; a separate `en_fast` folder can't be selected on the radio.
+
+## Choppy audio while logging
+
+Voice prompts can stutter while SD logging is active, most of all when logging
+starts or stops, which here is every arm and disarm. The log write keeps the SD
+card busy for longer than the ~30 ms of audio that is buffered.
+
+Fix proposed upstream in [EdgeTX PR #7858](https://github.com/EdgeTX/edgetx/pull/7858)
+(open, not merged): log writes wait while a prompt is playing, and a new prompt
+waits for a running log write. Tested on the Pocket on top of 2.12.4. Stock
+firmware still stutters.
